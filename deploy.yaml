@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vipul-cat-app
+  name: vipul-cat-app
+  namespace: vipul-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vipul-cat-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vipul-cat-app
+    spec:
+      containers:
+      - image: vipulvsinha/vipulcatapp:latest
+        name: vipulcatapp
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+        resources:
+          requests: 
+            cpu: 100m
+            memory: 200M
+          limits:
+            cpu: 200m
+            memory: 300M
