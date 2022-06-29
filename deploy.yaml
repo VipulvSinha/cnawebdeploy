@@ -7,7 +7,7 @@ metadata:
   name: vipul-cat-app
   namespace: vipul-ns
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: vipul-cat-app
